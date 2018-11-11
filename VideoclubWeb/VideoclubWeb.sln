@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DD695C44-00B7-41AE-BA32-3DA84A939C61}"
+	ProjectSection(SolutionItems) = preProject
+		app.js = app.js
+		index.html = index.html
+		index2.html = index2.html
+		index3.html = index3.html
+		misestilos.css = misestilos.css
+		post_0_3_637x307.webp = post_0_3_637x307.webp
+		punetazo.gif = punetazo.gif
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D814ED0-C665-4300-B2E8-7C65EB1B7F9F}
+	EndGlobalSection
+EndGlobal

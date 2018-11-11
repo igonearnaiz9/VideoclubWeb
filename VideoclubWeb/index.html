@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://bootswatch.com/3/slate/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="misestilos.css" />
+
+</head>
+<body onload="introducirDatos()">
+    <div class="container">
+        <header class="row">
+            <div class="jumbotron">
+                <h1>Título pág<span class="logo">in</span>a <small>subtítulo chulo</small></h1>
+                <p>Loren ipsum bla bla bla <span class="glyphicon glyphicon-tint"></span></p>
+
+                <a class="btn btn-default" href="http://duckduckgo.com">Mejor que google(pa la humanidad)</a>
+            </div>
+        </header>
+        <div class="row">
+            <ul class="nav nav-pills">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><input class="form-control" type="text" id="name" />Nombre</li>
+                <li><input class="form-control" type="text" id="surname" />Apellido</li>
+                <li><input class="btn btn-default" id="Acceder" value="Acceder"></li>
+                <li><a href="index2.html">Iniciar Sesión</a></li>
+                <!--<li><a href="#">Buscar</a></li>-->
+            </ul>
+        </div>
+        <div id="showPerson"></div>
+        <div class="clear">
+            <hr - />
+        </div>
+        <div class="row clearfix">
+            <ul id="filmList" class="list-group col-md-12"></ul>
+        </div>
+        <div class="clear">
+            <hr - />
+        </div>
+        <div class="row clearfix">
+            <div class="footer">
+                <div id="listadovideoclubs" class="list-group col-md-6">
+                    <p class="h3">PRÓXIMAMENTE</p>
+                    <ul id="otros" class="list-group col-md-6">
+                        <li><a href="#">Videoclub Steven Seagal</a></li>
+                        <li><a href="#">Videoclub Doplh Lundgren</a></li>
+                        <li><a href="#">Videoclub Van Dammme</a></li>
+                        <li><a href="#">Videoclub Chuache</a></li>
+                        <li><a href="#">Videoclub Stallone</a></li>
+                    </ul>
+                </div>
+                <div id="foto">
+                    <img src="punetazo.gif" class="img-responsive" width="398" height="216" />
+                </div>
+                <div id="copyright" align="center" margin="50">
+                    <br />Copyright © 2018 Igone <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

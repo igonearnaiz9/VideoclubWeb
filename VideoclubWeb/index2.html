@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://bootswatch.com/3/slate/bootstrap.css" rel="stylesheet" />
+</head>
+<body onload="showPersonGuardada()">
+    <div class="container">
+        <header class="row">
+            <div class="jumbotron">
+                <h1>Título pág<span class="logo">in</span>a <small>subtítulo chulo</small></h1>
+                <p>Loren ipsum bla bla bla <span class="glyphicon glyphicon-tint"></span></p>
+                <img src="punetazo.gif" class="img-responsive" />
+                <a class="btn btn-default" href="http://duckduckgo.com">Mejor que google(pa la humanidad)</a>
+            </div>
+        </header>
+        <div id="mostrarPersonGuardada"></div>
+        <div class="clear">
+            <hr - />
+        </div>
+        <div class="row">
+            <ul class="nav nav-pills col-md-12 ">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <!--<li><div class="btn-group">
+                        <a href="#" class="btn btn-default">Búsqueda por</a>
+                        <a href="#" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Título</a></li>
+                        <li><a href="#">Protagonista</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                        </div>
+                </li>-->
+                <li><input class="form-control" type="text" id="textoSearch" />Introduce Título o Protagonista</li>
+                <li>
+                    <select  class="form-control" id="select">
+                        <option value="">Búsqueda por</option>
+                        <option value="titulo">Título del Film</option>
+                        <option value="protagonista">Protagonista</option>
+                    </select>
+                </li>
+                <div id="mostrarOpcionSeleccionada"></div>
+            </ul>
+        </div>
+
+        <div class="clear">
+            <hr - />
+        </div>
+        <div class="row clearfix">
+            <ul id="listadoPorTitulo" class="list-group col-md-12"></ul>
+        </div>
+        <div class="clear">
+            <div class="clear">
+                <hr - />
+            </div>
+            <div class="row clearfix">
+                <div class="footer">
+                    <div id="listadovideoclubs" class="list-group col-md-6">
+                        <p class="h3">PRÓXIMAMENTE</p>
+                        <ul id="otros" class="list-group col-md-6">
+                            <li><a href="#">Videoclub Steven Seagal</a></li>
+                            <li><a href="#">Videoclub Doplh Lundgren</a></li>
+                            <li><a href="#">Videoclub Van Dammme</a></li>
+                            <li><a href="#">Videoclub Chuache</a></li>
+                            <li><a href="#">Videoclub Stallone</a></li>
+                        </ul>
+                    </div>
+                    <div id="foto">
+                        <img src="punetazo.gif" class="img-responsive" width="398" height="216" />
+                    </div>
+                    <div id="copyright" align="center" margin="50">
+                        <br />Copyright © 2018 Igone <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="app.js"></script>
+</body>
+</html>
