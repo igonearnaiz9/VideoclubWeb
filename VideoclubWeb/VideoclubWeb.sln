@@ -5,12 +5,14 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DD695C44-00B7-41AE-BA32-3DA84A939C61}"
 	ProjectSection(SolutionItems) = preProject
+		1037036.jpg = 1037036.jpg
 		app.js = app.js
+		gafaschuck.jpg = gafaschuck.jpg
 		index.html = index.html
 		index2.html = index2.html
 		index3.html = index3.html
+		init_pelis.js = init_pelis.js
 		misestilos.css = misestilos.css
-		post_0_3_637x307.webp = post_0_3_637x307.webp
 		punetazo.gif = punetazo.gif
 	EndProjectSection
 EndProject

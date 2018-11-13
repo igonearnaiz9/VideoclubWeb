@@ -1,23 +1,9 @@
-
-//Pongo la función entre()porque quiero que se me cargue nada más cargar la página ¡¡Es un videoclub!!
-(function () {
-    let xhr = new XMLHttpRequest();
-    let url = "http://api.themoviedb.org/3/person/51576/movie_credits?api_key=481c79d3a33080ff40b0228db08ba1a6";
-    xhr.open("GET", url);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            let responseObj = JSON.parse(xhr.response);
-            showFilms(responseObj);
-        }
-    };
-    xhr.send();
-}());
 let url2="";
 function showFilms(responseObj) {
     let filmList = [];
     for (let i = 0; i < responseObj.cast.length; i++) {
         url2 = "https://image.tmdb.org/t/p/original" + responseObj.cast[i].poster_path;
-        filmList.push({ title: responseObj.cast[i].title, poster_path:url2 });
+        filmList.push({/* title: responseObj.cast[i].title,*/poster_path:url2 });
     }
     console.log(filmList);
     localStorage.setItem("responseObj", JSON.stringify(filmList));
@@ -35,15 +21,16 @@ function showFilms(responseObj) {
         //{
         //    texto = document.createTextNode(filmList[i].title);
         //}
-        let texto = document.createTextNode(filmList[i].title);
+        //let texto = document.createTextNode(filmList[i].title);
         //texto.setAttribute("font-size","0,9em");
         let poster = document.createElement("IMG");
         poster.setAttribute("src", filmList[i].poster_path);
-        poster.setAttribute("width", "200");
-        poster.setAttribute("height", "250");
+        poster.setAttribute("width", "175");
+        poster.setAttribute("height", "225");
+        poster.setAttribute("class", "efectoimg");
         let parrafo = document.createElement("li");
         parrafo.setAttribute("class", "film col-sm-3 list-group-item");
-        parrafo.appendChild(texto);
+       //parrafo.appendChild(texto);
         //parrafo.appendChild(document.createElement("\n"));
         parrafo.appendChild(poster);
         //parrafo.setAttribute("font-size", "0,5");
@@ -55,23 +42,9 @@ function showFilms(responseObj) {
 //    button.addEventListener("click", getPerson)
 //} else {
 //    console.log("no se ha encontrado el botón")
-function introducirDatos() {
-    let boton = document.getElementById("Acceder");
-    boton.addEventListener("click", getPerson);
 
-}
-function getPerson() {
-    let name = document.getElementById("name").value; // con esto recogemos el valor de nombre en el html
-    let surname = document.getElementById("surname").value;
-    let person = { name: name, surname: surname };
-    //añadimos para el index2
-    localStorage.setItem("person", JSON.stringify(person));
-    let comprobarPerson = JSON.parse(localStorage.getItem("person"));
-    document.getElementById("showPerson").innerHTML = comprobarPerson.name + " " + comprobarPerson.surname;
-    return comprobarPerson;
 
-    //document.getElementById("showPerson").innerHTML = person.name + " " + person.surname;
-}
+
 function showPerson() {
     let personaGuardada = JSON.parse(localStorage.getItem("person"));
     document.getElementById("showPerson").innerHTML = personaGuardada.name + " " + personaGuardada.surname;   
@@ -97,13 +70,16 @@ function getOption() {//eleccionDropdown) {
         let xhr = new XMLHttpRequest();
         let url = "http://api.themoviedb.org/3/person/51576/movie_credits?api_key=481c79d3a33080ff40b0228db08ba1a6";
         xhr.open("GET", url);
-        
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 let responseObj2 = JSON.parse(xhr.response);
                 if (eleccionDropdown === "titulo") {
-                    console.log("pablito");
-                    showFilmsPorTitulo(responseObj2);
+                    //console.log("pablito");
+                    showFilmsPorTitulo(responseObj2,cajaTexto);
+                }
+                else if (eleccionDropdown === "protagonista") {
+                    //console.log("pablito");
+                    showFilmsPorProtagonista(responseObj2, cajaTexto);
                 }
             }
         };
@@ -112,6 +88,100 @@ function getOption() {//eleccionDropdown) {
     }
 }
 
+function showFilmsPorTitulo(responseObj2, cajaTexto) {
+    //borrar listado por titulo.TODO:
+
+    let filmListPorTitulo = [];
+    for (let i = 0; i < responseObj2.cast.length; i++) {
+        if (responseObj2.cast[i].title.toLowerCase().indexOf(cajaTexto.toLowerCase()) !== -1) {
+            url2 = "https://image.tmdb.org/t/p/original" + responseObj2.cast[i].poster_path;
+            filmListPorTitulo.push({
+                                title: responseObj2.cast[i].title,
+                                poster_path: url2,
+                                overview: responseObj2.cast[i].overview });
+        }
+    }   
+    console.log(filmListPorTitulo);
+    localStorage.setItem("responseObj2", JSON.stringify(filmListPorTitulo));
+    let pelisGuardadas = JSON.parse(localStorage.getItem("pelisElegidas"));
+    let peliculaClickadaList;
+    if (pelisGuardadas === null) {
+        peliculaClickadaList = [];
+    } else {
+        peliculaClickadaList = pelisGuardadas;
+    }
+    document.getElementById("listadoPorOpcion").innerHTML = "";//me vacía la lista antes de empezar
+    for (let i = 0; i < filmListPorTitulo.length; i++) {
+        let texto2 = document.createTextNode(filmListPorTitulo[i].title);
+        let poster2 = document.createElement("IMG");
+        let argumento2 = document.createTextNode(filmListPorTitulo[i].overview);
+        poster2.setAttribute("src", filmListPorTitulo[i].poster_path);
+        poster2.setAttribute("width", "200");
+        poster2.setAttribute("height", "250");
+        poster2.addEventListener("click", function () {
+            peliculaClickadaList.push({ title: filmListPorTitulo[i].title});
+            localStorage.setItem("pelisElegidas", JSON.stringify(peliculaClickadaList));
+            for (let i = 0; i < peliculaClickadaList.length; i++) {
+                console.log(peliculaClickadaList[i].title);
+                document.getElementById("pelisElegidas").innerHTML= pelisGuardadas[i].title;
+            }
+            
+           // showPelisClickadas(peliculaClickadaList);
+        })
+        let parrafo2 = document.createElement("li");
+        parrafo2.setAttribute("class", "film col-sm-3 list-group-item");
+        parrafo2.appendChild(texto2);
+        parrafo2.appendChild(poster2);
+        parrafo2.appendChild(argumento2);
+        document.getElementById("listadoPorOpcion").appendChild(parrafo2);
+    }
+    document.getElementById("textoSearch").value = "";
+    document.getElementById("select").value = "";
+}
+
+function showFilmsPorProtagonista(responseObj2, cajaTexto) {
+    let filmListPorProtagonista = [];
+    for (let i = 0; i < responseObj2.cast.length; i++) {
+        if (responseObj2.cast[i].title.toLowerCase().indexOf(cajaTexto.toLowerCase()) !== -1) {
+            url2 = "https://image.tmdb.org/t/p/original" + responseObj2.cast[i].poster_path;
+            filmListPorProtagonista.push({
+                title: responseObj2.cast[i].title,
+                poster_path: url2,
+                overview: responseObj2.cast[i].overview
+            });
+        }
+    }
+    console.log(filmListPorProtagonista);
+    document.getElementById("listadoPorOpcion").innerHTML = ""; 
+    localStorage.setItem("responseObj2", JSON.stringify(filmListPorProtagonista));
+    for (let i = 0; i < filmListPorProtagonista.length; i++) {
+        let texto2 = document.createTextNode(filmListPorProtagonista[i].title);
+        let poster2 = document.createElement("IMG");
+        let argumento2 = document.createTextNode(filmListPorProtagonista[i].overview);
+        poster2.setAttribute("src", filmListPorProtagonista[i].poster_path);
+        poster2.setAttribute("width", "200");
+        poster2.setAttribute("height", "250");
+        let parrafo2 = document.createElement("li");
+        parrafo2.setAttribute("class", "film col-sm-3 list-group-item");
+        parrafo2.appendChild(texto2);
+        parrafo2.appendChild(poster2);
+        parrafo2.appendChild(argumento2);
+        document.getElementById("listadoPorOpcion").appendChild(parrafo2);
+    }
+    document.getElementById("textoSearch").value = "";
+    document.getElementById("select").value = "";
+
+}
+
+//function showPelisClickadas(peliculaClickadaList) {
+//    for (let i = 0; i < peliculaClickadaList.length; i++) {
+//        console.log(peliculaClickadaList[i].title);
+//    }
+//}
+
+
+
+///para sacar las imagenes de los posters https://image.tmdb.org/t/p/original/ +8BcCh0Zxq3pR948Yz7P7IQG7esB.jpg
 //function apiCall() {
 //    let xhr = new XMLHttpRequest();
 //    let url = "http://api.themoviedb.org/3/person/51576/movie_credits?api_key=481c79d3a33080ff40b0228db08ba1a6";
@@ -125,22 +195,3 @@ function getOption() {//eleccionDropdown) {
 //    xhr.send();
 //};
 //let url2 = "";
-function showFilmsPorTitulo(responseObj2) {
-    let filmListPorTitulo = [];
-    for (let i = 0; i < responseObj2.cast.length; i++) {
-        url2 = "https://image.tmdb.org/t/p/original" + responseObj2.cast[i].poster_path;
-        filmListPorTitulo.push({title:responseObj2.cast[i].title, poster_path: url2 });
-    }   
-    console.log(filmListPorTitulo);
-    localStorage.setItem("responseObj2", JSON.stringify(filmListPorTitulo));
-    for (let i = 0; i < filmListPorTitulo.length; i++) {
-        let texto2 = document.createTextNode(filmListPorTitulo[i].title);
-        let parrafo2 = document.createElement("li");
-        parrafo2.setAttribute("class", "film col-sm-3 list-group-item");
-        parrafo2.appendChild(texto2);
-        document.getElementById("listadoPorTitulo").appendChild(parrafo2);
-    }
-}
-
-
-///para sacar las imagenes de los posters https://image.tmdb.org/t/p/original/ +8BcCh0Zxq3pR948Yz7P7IQG7esB.jpg

@@ -8,35 +8,44 @@
     <link rel="stylesheet" type="text/css" href="misestilos.css" />
 
 </head>
-<body onload="introducirDatos()">
+<body>
     <div class="container">
         <header class="row">
             <div class="jumbotron">
-                <h1>Título pág<span class="logo">in</span>a <small>subtítulo chulo</small></h1>
-                <p>Loren ipsum bla bla bla <span class="glyphicon glyphicon-tint"></span></p>
-
-                <a class="btn btn-default" href="http://duckduckgo.com">Mejor que google(pa la humanidad)</a>
+                <h1  class="logo">Videoclub Chuck</h1> 
+                <h2>Chuck Norris Approves <span class="glyphicon glyphicon-thumbs-up"></span></h2>
+                <p>Chuck Norris's Blood Type is AK-47.</p>
+                
             </div>
         </header>
         <div class="row">
             <ul class="nav nav-pills">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Acerca de</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index3.html">Acerca de</a></li>
                 <li><input class="form-control" type="text" id="name" />Nombre</li>
                 <li><input class="form-control" type="text" id="surname" />Apellido</li>
                 <li><input class="btn btn-default" id="Acceder" value="Acceder"></li>
                 <li><a href="index2.html">Iniciar Sesión</a></li>
                 <!--<li><a href="#">Buscar</a></li>-->
             </ul>
-        </div>
-        <div id="showPerson"></div>
-        <div class="clear">
-            <hr - />
+            <div id="showPerson"></div>
+            <div class="clear">
+                <hr - />
+            </div>
         </div>
         <div class="row clearfix">
-            <ul id="filmList" class="list-group col-md-12"></ul>
+            <ul id="filmList" class="list-group col-md-9 "></ul>
+            <aside class="col-md-3">
+                    <img  id ="chuck" src="1037036.jpg" width="250" height="300"  />
+                    <p class="contenidoaside">
+                        Carlos Ray Norris (Ryan, Oklahoma, 10 de marzo de 1940), conocido como Chuck Norris,
+                        es un actor estadounidense, campeón mundial de karate, exmilitar y fundador de una asociación de karate.
+                    </p>
+                    <a class="btn btn-default" href="https://es.wikipedia.org/wiki/Chuck_Norris">Vida y Milagros</a>
+            </aside>
         </div>
         <div class="clear">
+        
             <hr - />
         </div>
         <div class="row clearfix">
@@ -44,11 +53,11 @@
                 <div id="listadovideoclubs" class="list-group col-md-6">
                     <p class="h3">PRÓXIMAMENTE</p>
                     <ul id="otros" class="list-group col-md-6">
-                        <li><a href="#">Videoclub Steven Seagal</a></li>
-                        <li><a href="#">Videoclub Doplh Lundgren</a></li>
-                        <li><a href="#">Videoclub Van Dammme</a></li>
-                        <li><a href="#">Videoclub Chuache</a></li>
-                        <li><a href="#">Videoclub Stallone</a></li>
+                        <li><a href="index3.html">Videoclub Steven Seagal</a></li>
+                        <li><a href="index3.html">Videoclub Doplh Lundgren</a></li>
+                        <li><a href="index3.html">Videoclub Van Dammme</a></li>
+                        <li><a href="index3.html">Videoclub Chuache</a></li>
+                        <li><a href="index3.html">Videoclub Stallone</a></li>
                     </ul>
                 </div>
                 <div id="foto">
@@ -60,6 +69,7 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script src="init_pelis.js"></script>
+    <script src="app.js" charset="iso-8859-1"></script>
 </body>
 </html>

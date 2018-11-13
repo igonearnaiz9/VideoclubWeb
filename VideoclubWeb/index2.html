@@ -5,15 +5,16 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="https://bootswatch.com/3/slate/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="misestilos.css" />
 </head>
 <body onload="showPersonGuardada()">
     <div class="container">
         <header class="row">
             <div class="jumbotron">
-                <h1>Título pág<span class="logo">in</span>a <small>subtítulo chulo</small></h1>
-                <p>Loren ipsum bla bla bla <span class="glyphicon glyphicon-tint"></span></p>
-                <img src="punetazo.gif" class="img-responsive" />
-                <a class="btn btn-default" href="http://duckduckgo.com">Mejor que google(pa la humanidad)</a>
+                <h1 class="logo">Videoclub Chuck</h1>
+                <h2>Chuck Norris Approves <span class="glyphicon glyphicon-thumbs-up"></span></h2>
+                <p>Chuck Norris makes onions cry.</p>
+
             </div>
         </header>
         <div id="mostrarPersonGuardada"></div>
@@ -22,23 +23,23 @@
         </div>
         <div class="row">
             <ul class="nav nav-pills col-md-12 ">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Acerca de</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index3.html">Acerca de</a></li>
                 <!--<li><div class="btn-group">
-                        <a href="#" class="btn btn-default">Búsqueda por</a>
-                        <a href="#" class="btn btn-default dropdown-toggle"
-                        data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Título</a></li>
-                        <li><a href="#">Protagonista</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                        </div>
-                </li>-->
+            <a href="#" class="btn btn-default">Búsqueda por</a>
+            <a href="#" class="btn btn-default dropdown-toggle"
+            data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Título</a></li>
+            <li><a href="#">Protagonista</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+            </div>
+    </li>-->
                 <li><input class="form-control" type="text" id="textoSearch" />Introduce Título o Protagonista</li>
                 <li>
-                    <select  class="form-control" id="select">
+                    <select class="form-control" id="select">
                         <option value="">Búsqueda por</option>
                         <option value="titulo">Título del Film</option>
                         <option value="protagonista">Protagonista</option>
@@ -47,12 +48,22 @@
                 <div id="mostrarOpcionSeleccionada"></div>
             </ul>
         </div>
-
         <div class="clear">
             <hr - />
         </div>
         <div class="row clearfix">
-            <ul id="listadoPorTitulo" class="list-group col-md-12"></ul>
+            <ul id="listadoPorOpcion" class="list-group col-md-09 "></ul>
+            <aside id="aside" class="col-md-3 col-md-offset-9">
+                <img id="chuck" src="1037036.jpg" width="250" height="300" />
+                <p class="contenidoaside">
+                    Carlos Ray Norris (Ryan, Oklahoma, 10 de marzo de 1940), conocido como Chuck Norris,
+                    es un actor estadounidense, campeón mundial de karate, exmilitar y fundador de una asociación de karate.
+                </p>
+                <a class="btn btn-default" href="https://es.wikipedia.org/wiki/Chuck_Norris">Vida y Milagros</a>
+                <div class="row">
+                    <ul id="pelisElegidas" class="list-group col-md-03">Tus peliculas favoritas</ul>
+                </div>
+            </aside>
         </div>
         <div class="clear">
             <div class="clear">
@@ -63,11 +74,11 @@
                     <div id="listadovideoclubs" class="list-group col-md-6">
                         <p class="h3">PRÓXIMAMENTE</p>
                         <ul id="otros" class="list-group col-md-6">
-                            <li><a href="#">Videoclub Steven Seagal</a></li>
-                            <li><a href="#">Videoclub Doplh Lundgren</a></li>
-                            <li><a href="#">Videoclub Van Dammme</a></li>
-                            <li><a href="#">Videoclub Chuache</a></li>
-                            <li><a href="#">Videoclub Stallone</a></li>
+                            <li><a href="index3.html">Videoclub Steven Seagal</a></li>
+                            <li><a href="index3.html">Videoclub Doplh Lundgren</a></li>
+                            <li><a href="index3.html">Videoclub Van Dammme</a></li>
+                            <li><a href="index3.html">Videoclub Chuache</a></li>
+                            <li><a href="index3.html">Videoclub Stallone</a></li>
                         </ul>
                     </div>
                     <div id="foto">
